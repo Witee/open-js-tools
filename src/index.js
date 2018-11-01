@@ -1,4 +1,4 @@
-import string from './string';
+import string from './libs/string';
 
 export default {
   string,
