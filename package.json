@@ -1,6 +1,6 @@
 {
   "name": "open-js-tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "通用的 js 工具库，类似 lodash，实现对字符串等进一步操作。",
   "main": "build/index.js",
   "scripts": {
