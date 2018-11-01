@@ -4,8 +4,7 @@
   "description": "通用的 js 工具库，类似 lodash，实现对字符串等进一步操作。",
   "main": "build/index.js",
   "scripts": {
-    "build": "webpack --progress --config ./webpack.config.js",
-    "pub": "npm version patch && npm run build && npm publish"
+    "pub": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
@@ -22,17 +21,11 @@
     "moment": "^2.22.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "clean-webpack-plugin": "^0.1.19",
-    "eslint": "^5.5.0",
-    "webpack": "^4.23.1",
-    "webpack-cli": "^3.1.2"
+    "eslint": "^5.5.0"
   },
   "files": [
-    "build"
+    "index.js",
+    "libs"
   ],
   "eslintConfig": {
     "parser": "babel-eslint",
