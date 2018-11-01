@@ -1,5 +1,5 @@
 import string from './libs/string';
 
-export default {
+export {
   string,
 };
