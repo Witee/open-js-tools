@@ -1,8 +1,12 @@
-
 /**
   unix时间戳 + 随机数据 生成不重复的 id
 */
 const randomStr = () => `${_.now()}z${_.random(0, 1000000)}`;
+
+/**
+  随机颜色
+*/
+const customColor = () => `#${Math.floor(Math.random() * ((256 * 256 * 256) - 1)).toString(16)}`;
 
 /**
   时间字符串变量，将指定字符串中的"变量字符"替换成对应的字符串(传递 moment 支持的参数实现)
@@ -89,5 +93,6 @@ const dateTemplate = (textArr) => {
 
 export default {
   randomStr,
+  customColor,
   dateTemplate,
 };
