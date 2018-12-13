@@ -4,7 +4,7 @@
   "description": "通用的 js 工具库，类似 lodash，实现对字符串等进一步操作。",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel src -d build",
+    "build": "rm -rf build/ && babel src -d build",
     "pub": "npm run build && npm version patch && npm publish"
   },
   "repository": {
