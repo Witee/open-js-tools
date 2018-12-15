@@ -23,6 +23,7 @@
     "moment": "^2.22.2"
   },
   "devDependencies": {
+    "apidoc": "^0.17.7",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
