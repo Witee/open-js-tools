@@ -4,6 +4,7 @@
   "description": "通用的 js 工具库，类似 lodash，实现对字符串等进一步操作。",
   "main": "build/index.js",
   "scripts": {
+    "test": "jest src/libs/",
     "build": "rm -rf build/ && babel src -d build",
     "pub": "npm run build && npm version patch && npm publish"
   },
@@ -25,12 +26,15 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0"
+    "eslint-plugin-react": "^7.11.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1"
   },
   "files": [
     "build"
@@ -39,5 +43,6 @@
     "presets": [
       "env"
     ]
-  }
+  },
+  "jest": {}
 }

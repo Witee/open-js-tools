@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /**
   过滤表格中列的数据
 
@@ -76,8 +78,69 @@ const fixData = (dataSource) => {
   return newRows;
 };
 
+/**
+  将 antd table 格式的 dataSource 转换为 echarts dataset.source 格式
+
+  dataSource 格式为:
+    [
+      [日期, 平台, 声量],
+      [2018-7-1, 微博, 1024],
+      [2018-7-1, 微信,2048],
+    ]
+  转换为:
+    [
+      [日期, 微博, 微信],
+      [2018-7-1, 1024, 2048],
+    ]
+  样例中
+    categoryColumn = 日期
+    valueColumn = 声量
+    legendColumn = 平台
+
+
+  注意: 需要根据类型传递参数，即，第二个参数需要类目型(categoryColumn)
+*/
+const dataSource2Dataset = (dataSource, categoryColumn, valueColumn, legendColumn) => {
+  if (_.get(dataSource, 'length', 0) <= 1) {
+    return dataSource;
+  }
+
+  const dataset = { source: [] };
+  const header = _.get(dataSource, 0, []);
+  const body = _.slice(dataSource, 1);
+
+
+  const categoryIndex = _.indexOf(header, categoryColumn);
+  const valueIndex = _.indexOf(header, valueColumn);
+  const legendIndex = _.indexOf(header, legendColumn);
+
+  const legendData = _.keys(_.groupBy(body, legendIndex)); // 如 ['微博', '微信']
+
+  let newHeader = [categoryColumn];
+  newHeader = _.concat(newHeader, legendData);
+
+  const tmpData = {};
+  _.forEach(body, (b) => {
+    // 找到 legend 的 index，即 微博、微信 在 legendData ([微博, 微信])中的位置，以此顺序保存数据
+    const lIndex = _.findIndex(legendData, (l) => (l === b[legendIndex]));
+    // 保存数据，格式: {'2017-7-1': [1024, 2048], ...}
+    _.set(tmpData, [b[categoryIndex], lIndex], _.get(b, valueIndex, null));
+  });
+
+  _.forEach(tmpData, (value, key) => {
+    dataset.source.push([
+      key,
+      ...value,
+    ]);
+  });
+
+  dataset.source.unshift(newHeader);
+
+  return dataset;
+};
 
 export default {
   filterAndSorter,
   fixData,
+  dataSource2Dataset,
 };

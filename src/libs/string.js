@@ -1,3 +1,6 @@
+import _ from 'lodash';
+import moment from 'moment';
+
 /**
   unix时间戳 + 随机数据 生成不重复的 id
 */
@@ -20,12 +23,12 @@ const customColor = () => `#${Math.floor(Math.random() * ((256 * 256 * 256) - 1)
 
     第二、三、四 部分为空或未设置，表示当前时间
 
-  YYYY : 年
-  MM   : 月
-  DD   : 日
-  HH   : 时
-  mm   : 分
-  ss   : 秒
+    YYYY : 年
+    MM   : 月
+    DD   : 日
+    HH   : 时
+    mm   : 分
+    ss   : 秒
 
   参数格式举例:
     模版: ['模版字符串', '基准时间字符串', ['add/subtract', NUM, 'years/months/weeks/days/hours/minutes/seconds/milliseconds'], ['startOf/endOf', 'year/month/week/day/hour/minute/second']]
