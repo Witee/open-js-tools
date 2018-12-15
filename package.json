@@ -5,6 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "test": "jest src/libs/",
+    "docs": "apidoc -f .js -i src/libs/ -o docs/",
     "build": "rm -rf build/ && babel src -d build",
     "pub": "npm run build && npm version patch && npm publish"
   },
@@ -45,5 +46,10 @@
       "env"
     ]
   },
-  "jest": {}
+  "jest": {},
+  "apidoc": {
+    "name": "open-js-tools",
+    "title": "open-js-tools 工具库",
+    "url": "https://witee.github.io/open-js-tools/"
+  }
 }

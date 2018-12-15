@@ -100,6 +100,16 @@ const fixData = (dataSource) => {
 
   注意: 需要根据类型传递参数，即，第二个参数需要类目型(categoryColumn)
 */
+/**
+ * @api {get} /user/:id Request User information
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id Users unique ID.
+ *
+ * @apiSuccess {String} firstname Firstname of the User.
+ * @apiSuccess {String} lastname  Lastname of the User.
+ */
 const dataSource2Dataset = (dataSource, categoryColumn, valueColumn, legendColumn) => {
   if (_.get(dataSource, 'length', 0) <= 1) {
     return dataSource;
