@@ -101,14 +101,12 @@ const fixData = (dataSource) => {
   注意: 需要根据类型传递参数，即，第二个参数需要类目型(categoryColumn)
 */
 /**
- * @api {get} /user/:id Request User information
- * @apiName GetUser
- * @apiGroup User
+ * @api /aaaaa 将 antd table 格式的 dataSource 转换为 echarts dataset.source 格式
+ * @apiName dataSource2Dataset
  *
- * @apiParam {Number} id Users unique ID.
- *
- * @apiSuccess {String} firstname Firstname of the User.
- * @apiSuccess {String} lastname  Lastname of the User.
+ * @apiParam {Object[]} dataSource
+ * @apiParam {String} dataSource
+ * @apiExample
  */
 const dataSource2Dataset = (dataSource, categoryColumn, valueColumn, legendColumn) => {
   if (_.get(dataSource, 'length', 0) <= 1) {

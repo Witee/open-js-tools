@@ -6,6 +6,8 @@
   "scripts": {
     "test": "jest src/libs/",
     "docs": "apidoc -f .js -i src/libs/ -o docs/",
+    "docs:watch": "chokidar \"src/*.js\" \"src/**/*.js\" -c \" npm run docs\"",
+    "docs:start": "cd docs/ && browser-sync start --server --port 8000 --no-notify --files '**/*.css, **/*.html, **/*.js, **/*.jsx'",
     "build": "rm -rf build/ && babel src -d build",
     "pub": "npm run build && npm version patch && npm publish"
   },
@@ -30,6 +32,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -50,6 +53,6 @@
   "apidoc": {
     "name": "open-js-tools",
     "title": "open-js-tools 工具库",
-    "url": "https://witee.github.io/open-js-tools/"
+    "url": "https://witee.github.io/open-js-tools"
   }
 }
