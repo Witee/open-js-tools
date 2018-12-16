@@ -78,36 +78,46 @@ const fixData = (dataSource) => {
   return newRows;
 };
 
+
 /**
-  将 antd table 格式的 dataSource 转换为 echarts dataset.source 格式
-
-  dataSource 格式为:
-    [
-      [日期, 平台, 声量],
-      [2018-7-1, 微博, 1024],
-      [2018-7-1, 微信,2048],
-    ]
-  转换为:
-    [
-      [日期, 微博, 微信],
-      [2018-7-1, 1024, 2048],
-    ]
-  样例中
-    categoryColumn = 日期
-    valueColumn = 声量
-    legendColumn = 平台
-
-
-  注意: 需要根据类型传递参数，即，第二个参数需要类目型(categoryColumn)
-*/
-/**
- * @api /aaaaa 将 antd table 格式的 dataSource 转换为 echarts dataset.source 格式
+ * @api {function} table.dataSource2Dataset() dataSource2Dataset
  * @apiName dataSource2Dataset
+ * @apiGroup table
  *
- * @apiParam {Object[]} dataSource
- * @apiParam {String} dataSource
- * @apiExample
- */
+ * @apiDescription
+ *  功能: 将 antd table 格式的 dataSource 转换为 echarts dataset.source 格式
+ *
+ *  方法: dataSource2Dataset(dataSource, categoryColumn, valueColumn, legendColumn)
+ *
+ *  注意: 参数是有顺序的，需要根据 x/y 轴类型传递参数，如，第二个参数需要类目型(categoryColumn)
+ *
+ *  参考: http://www.echartsjs.com/option.html#xAxis
+ *
+ * @apiParam {Array} dataSource 二维表格式
+ * @apiParam {String} categoryColumn 类目型列名称
+ * @apiParam {String} valueColumn 数值型列名称
+ * @apiParam {String} legendColumn 系列对应的列名称
+ *
+ * @apiExample {javascript} 样例:
+ *  import { table } from 'open-js-tools';
+ *
+ *  const dataSource = [
+ *    ['日期', '平台', '声量'],
+ *    ['2018-7-1', '微博', 1024],
+ *    ['2018-7-1', '微信', 2048],
+ *  ]
+ *
+ *  // echarts 4.x 中，选择 x 轴为 category 类型，y 轴为 value 类型, 系列使用 "平台" 所在的列
+ *  // 本例中: categoryColumn = '日期'; valueColumn = '声量'; legendColumn = '平台'
+ *  const result = table.dataSource2Dataset(dataSource, '日期', '声量', '平台')
+ *
+ *  console.log(result)
+ *
+ *  [
+ *    ['日期', '微博', '微信'],
+ *    ['2018-7-1', 1024, 2048],
+ *  ]
+*/
 const dataSource2Dataset = (dataSource, categoryColumn, valueColumn, legendColumn) => {
   if (_.get(dataSource, 'length', 0) <= 1) {
     return dataSource;
