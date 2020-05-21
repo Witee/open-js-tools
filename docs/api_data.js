@@ -9,7 +9,7 @@ define({ "api": [
     "examples": [
       {
         "title": "示例:",
-        "content": "\nimport jsTools from 'open-js-tools';\n\nconst s = jsTools.string.randomColor();\n\nconsole.log(s) // #891cc1",
+        "content": "\nimport { string } from 'open-js-tools';\n\nconst s = string.randomColor();\n\nconsole.log(s) // #891cc1",
         "type": "typescript"
       }
     ],
@@ -27,7 +27,7 @@ define({ "api": [
     "examples": [
       {
         "title": "示例:",
-        "content": "\nimport jsTools from 'open-js-tools';\n\nconst s = jsTools.string.randomStr();\n\nconsole.log(s) // 1544852620609z611098",
+        "content": "\nimport { string } from 'open-js-tools';\n\nconst s = string.randomStr();\n\nconsole.log(s) // 1544852620609z611098",
         "type": "typescript"
       }
     ],
