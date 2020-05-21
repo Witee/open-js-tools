@@ -14,6 +14,9 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
+    "pub": "npm publish",
+    "minor": "npm version minor",
+    "patch": "npm version patch",
     "docs": "apidoc -f .js -i src/libs/ -o docs/",
     "docs:watch": "chokidar \"src/*.ts\" \"src/**/*.ts\" -c \" npm run docs\"",
     "docs:start": "cd docs/ && browser-sync start --server --port 8000 --no-notify --files '**/*.css, **/*.html, **/*.js, **/*.jsx'"
