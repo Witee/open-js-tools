@@ -1,6 +1,24 @@
 define({ "api": [
   {
     "type": "function",
+    "url": "string.randomColor()",
+    "title": "随机生成颜色值",
+    "name": "randomColor",
+    "group": "string",
+    "description": "<p>随机生成颜色值</p>",
+    "examples": [
+      {
+        "title": "示例:",
+        "content": "\nimport jsTools from 'open-js-tools';\n\nconst s = jsTools.string.randomColor();\n\nconsole.log(s) // #891cc1",
+        "type": "typescript"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "src/libs/string.ts",
+    "groupTitle": "string"
+  },
+  {
+    "type": "function",
     "url": "string.randomStr()",
     "title": "生成不重复的 id",
     "name": "randomString",
@@ -8,9 +26,9 @@ define({ "api": [
     "description": "<p>unix时间戳 + 随机数据</p>",
     "examples": [
       {
-        "title": "样例:",
-        "content": "\nconst s = string.randomStr();\n\nconsole.log(s) // 1544852620609z611098",
-        "type": "ts"
+        "title": "示例:",
+        "content": "\nimport jsTools from 'open-js-tools';\n\nconst s = jsTools.string.randomStr();\n\nconsole.log(s) // 1544852620609z611098",
+        "type": "typescript"
       }
     ],
     "version": "0.0.0",
