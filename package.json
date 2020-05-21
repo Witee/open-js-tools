@@ -2,11 +2,11 @@
   "name": "open-js-tools",
   "version": "2.0.0",
   "description": "JS 工具库",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
+    "build": "rm -rf ./dist && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -55,7 +55,7 @@
   },
   "homepage": "https://github.com/Witee/open-js-tools#readme",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "jest": {
     "transform": {
