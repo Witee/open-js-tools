@@ -9,9 +9,9 @@ import _ from 'lodash';
  *
  * @apiExample {typescript} 示例:
  *
- * import jsTools from 'open-js-tools';
+ * import { string } from 'open-js-tools';
  *
- * const s = jsTools.string.randomStr();
+ * const s = string.randomStr();
  *
  * console.log(s) // 1544852620609z611098
  *
@@ -27,9 +27,9 @@ const randomStr = () => `${_.now()}z${_.random(0, 1000000)}`;
  *
  * @apiExample {typescript} 示例:
  *
- * import jsTools from 'open-js-tools';
+ * import { string } from 'open-js-tools';
  *
- * const s = jsTools.string.randomColor();
+ * const s = string.randomColor();
  *
  * console.log(s) // #891cc1
  *
