@@ -16,7 +16,7 @@ import _ from 'lodash';
  * console.log(s) // 1544852620609z611098
  *
  */
-const randomStr = () => `${_.now()}z${_.random(0, 1000000)}`;
+const randomStr = () => `${_.now()}z${_.random(100000, 999999)}`;
 
 /**
  * @api {function} string.randomColor() 随机生成颜色值
