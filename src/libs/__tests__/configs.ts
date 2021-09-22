@@ -1,5 +1,5 @@
 /**
- * 全局配置
+ * 测试用例配置
  *
  * @author Witee <github.com/Witee>
  * @date 2020-05-21
